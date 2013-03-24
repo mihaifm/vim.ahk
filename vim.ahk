@@ -7,7 +7,9 @@ config.shiftwidth := 4
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; globals
 
+SetWorkingDir %A_ScriptDir%
 window_states := {}
+Read2ini() ;Read ini from vim.ini , to remenber windows_state when script Reload
 
 normal := {}
 normal.on := true
@@ -65,9 +67,14 @@ ChangeState(wParam, lParam )
 {
     global window_states
     global title
-    WinGetTitle title, ahk_id %lParam%
-    if (wParam=4) ;HSHELL_WINDOWACTIVATED
-    { 
+	global titleStr
+	title := lParam
+	IfNotInString,titleStr,%title%
+		titleStr := titleStr "." title
+	;ToolTip % titleStr
+    ;WinGetTitle title, ahk_id %lParam%
+    ;if (wParam=4) ;HSHELL_WINDOWACTIVATED
+    ;{ 
         if (!window_states[title] || window_states[title] == "suspended") 
         {
             Suspend On
@@ -78,11 +85,11 @@ ChangeState(wParam, lParam )
             Suspend Off
         }
         Mode(window_states[title])
-    }
+    ;}
 }
 
 ; Toggle script 
-F12::
+#u::
     global window_states
     global title
     Suspend Toggle
@@ -1785,7 +1792,7 @@ Mode(param)
     }
 
     Clear()
-
+	Write2ini() ; Write window_states 2 ini
     return __mode
 }
 
@@ -1816,3 +1823,28 @@ CountVisualLines()
     return (NumRepl + 1)
 }
 
+Write2ini() ; Write window_states 2 ini
+{
+	global
+	StringSplit,titleArray,titleStr,.,
+	Loop % titleArray0
+	{
+		key2ini := titleArray%a_index%
+		if key2ini = 
+			continue
+		value2ini := window_states[key2ini] 
+		;ToolTip  key2ini - %key2ini% `nvalue2ini - %value2ini%
+		IniWrite,%value2ini%,vim.ini,iniStr,%key2ini%
+	}
+}
+
+Read2ini() ;Read ini from vim.ini , to remenber windows_state when script Reload
+{
+	IniRead, iniStr, vim.ini, iniStr,
+	StringSplit,iniArray,iniStr,`n,
+	Loop % iniArray0
+	{
+		StringSplit, tempArray, iniArray%A_Index%, =,
+		window_states[tempArray1]:= tempArray2
+	}
+}
