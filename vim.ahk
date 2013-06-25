@@ -89,6 +89,7 @@ ChangeState(wParam, lParam )
 }
 
 ; Toggle script 
+F12::
 #u::
     global window_states
     global title
