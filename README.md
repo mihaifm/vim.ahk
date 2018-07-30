@@ -4,15 +4,19 @@
 
 The script is experimental and only supports a small subset of Vim commands.
 
-**[Demo](http://www.youtube.com/watch?v=z8sj_t23n_s)**
+**Demo:** 
+
+http://www.youtube.com/watch?v=z8sj_t23n_s
 
 ### Usage
 
-Vim.ahk was created with [Autohotkey_L](http://l.autohotkey.net/).
+Vim.ahk is an [Autohotkey](https://autohotkey.com/) script. It can be run using:
 
-In order to use it, install [Autohotkey_L](http://l.autohotkey.net/), then run the **vim.ahk** file.
+     AutoHotKey.exe vim.ahk
 
-Alternativelly, run **vim.ahk.exe**, which is a compiled version of the script. This does not require [Autohotkey_L](http://l.autohotkey.net/) to be installed.
+A standalone executable has also been compiled as a release:
+
+     vim.ahk.exe
 
 ### Modes
 
