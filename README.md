@@ -6,7 +6,7 @@ The script is experimental and only supports a small subset of Vim commands.
 
 **Demo:** 
 
-http://www.youtube.com/watch?v=z8sj_t23n_s
+https://www.youtube.com/watch?v=z8sj_t23n_s
 
 ### Usage
 
@@ -14,7 +14,7 @@ Vim.ahk is an [Autohotkey](https://autohotkey.com/) script. It can be run using:
 
      AutoHotKey.exe vim.ahk
 
-A standalone executable has also been compiled as a release:
+A standalone executable has also been compiled as a [release](https://github.com/mihaifm/vim.ahk/releases):
 
      vim.ahk.exe
 
