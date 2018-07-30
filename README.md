@@ -1,4 +1,4 @@
-### Description
+## Description
 
 **Vim.ahk** is a script that attempts to mimic Vim commands inside Windows applications. 
 
@@ -8,7 +8,7 @@ The script is experimental and only supports a small subset of Vim commands.
 
 https://www.youtube.com/watch?v=z8sj_t23n_s
 
-### Usage
+## Usage
 
 Vim.ahk is an [Autohotkey](https://autohotkey.com/) script. It can be run using:
 
@@ -18,7 +18,7 @@ A standalone executable has also been compiled as a [release](https://github.com
 
      vim.ahk.exe
 
-### Modes
+## Modes
 
 Vim.ahk supports the following modes:
 
@@ -36,7 +36,7 @@ Regular Vim modes.
 
 By default, the script starts in Suspended mode. It remembers the mode for each individual window, so each window will have it's own mode.
 
-### Supported commands
+## Supported commands
 
     Esc
     i
@@ -104,7 +104,7 @@ By default, the script starts in Suspended mode. It remembers the mode for each 
         numbered: 0, 1, 2-9
         blackhole: _
 
-### Limitations
+## Limitations
 
     w - word boundaries
     yy - moves cursor
